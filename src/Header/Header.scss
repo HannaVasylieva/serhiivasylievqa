@@ -1,0 +1,100 @@
+@import "../Helpers/mixins.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 2px;
+    overflow: hidden;
+    color: white;
+    margin: 0;
+    background: linear-gradient(90deg, #03045e, #0077b6, #03045e);
+    background-size: 200%;
+    animation: background-glow 3s infinite linear;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-image: linear-gradient(90deg, #03045e, #0077b6, #03045e) 1;
+
+    @include mobileOnly {
+      font-size: 12px;
+    }
+  }
+
+  @keyframes background-glow {
+    0% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+
+  &__nav {
+    font-size: 22px;
+    font-weight: 400;
+
+    @include onBTablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-right: 40px;
+    padding: 4px 8px;
+    color: #03045e;
+    position: relative;
+    border: 2px solid transparent;
+    transition: color 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #0077b6;
+      transform: scale(1.3);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &:hover {
+      color: #0077b6;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__linkedin {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease;
+
+      @include mobileOnly {
+        width: 40px;
+        height: 40px;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+  }
+}

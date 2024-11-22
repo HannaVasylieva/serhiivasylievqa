@@ -1,0 +1,78 @@
+@import "../Helpers/mixins.scss";
+
+.projects {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 0px;
+  }
+
+  &__project {
+    width: 400px;
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    color: hwb(37 12% 5%);
+    font-size: 100px;
+    font-weight: 800;
+    margin: 0px;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    @include mobileOnly {
+      font-size: 40px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 400px;
+    height: 300px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+
+      @include onTablet {
+        transform: scale(0.9);
+      }
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+}

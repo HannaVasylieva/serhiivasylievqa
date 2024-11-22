@@ -1,0 +1,17 @@
+@import "./Helpers/mixins.scss";
+
+.App {
+  font-family: 'Poppins', sans-serif;
+  color: #03045e;
+  background-color: #fbf8cc;
+  min-height: 100vh;
+  padding: 40px 100px 0px 100px;
+
+  @include onTablet {
+    padding: 30px 50px 0px 50px;
+  }
+
+  @include mobileOnly {
+    padding: 30px 30px 0px 30px;
+  }
+}

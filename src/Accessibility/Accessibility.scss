@@ -1,0 +1,46 @@
+@import "../Helpers/mixins.scss";
+
+.accessibility {
+margin-bottom: 100px;
+
+@include onTablet {
+  margin-bottom: 50px;
+}
+
+  &__title {
+    color: hwb(37 12% 5%);
+    font-size: 100px;
+    font-weight: 800;
+    margin: 0px;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+
+    @include mobileOnly {
+      font-size: 40px;
+    }
+  }
+
+  &__content {
+    margin-top: 20px;
+  }
+
+  &__subtitle {
+    font-size: 1.5em;
+    margin-top: 20px;
+
+    @include mobileOnly {
+      font-size: 20px;
+    }
+  }
+
+  &__list {
+    margin: 10px 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
