@@ -20,8 +20,10 @@ A single-page application designed for a QA specialist with a strong focus on ac
 ## Installation and Setup
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-repository.git
+   git clone https://github.com/HannaVasylieva/serhiivasylievqa
 2. Install dependencies:
+   ```bash
    npm install
 3. Start the development server:
+   ```bash
    npm start
